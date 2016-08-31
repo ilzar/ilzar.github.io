@@ -288,6 +288,41 @@
     </div>
 </div>
 
+
+<script type="text/javascript">
+    if (window.location.hash.match(/gsc.q=[^&]+/)) {
+        document.getElementById('spinner').style.paddingTop = ((window.innerHeight - 53 - 40 - 35) / 2) + 'px';
+        var searchResults = document.getElementById('cseSearchResults');
+        searchResults.style.display = 'block';
+        searchResults.style.minHeight = window.innerHeight + 'px';
+
+        var hash = window.location.hash;
+        if (hash && hash.length > 0) {
+            hash = hash.substr(1);
+        }
+        var arr = hash.split(/&/);
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i].indexOf("gsc.q=") == 0) {
+                var q = decodeURIComponent(arr[i].substr(6));
+                document.getElementById('cseInput').value = q;
+                setTimeout(function() {
+                    var suggest = document.createElement('img');
+                    suggest.width = 1;
+                    suggest.height = 1;
+                    suggest.src = '/suggest?q=' + encodeURIComponent(q) + '&t=' + new Date().getTime();
+                    suggest.onload = function() {
+                        this.remove();
+                    };
+                    document.body.appendChild(suggest);
+                }, 1000);
+                break;
+            }
+        }
+    } else {
+        window.location = '/?rtag=yfd';
+    }
+</script>
+
 </body>
 
 </html>
