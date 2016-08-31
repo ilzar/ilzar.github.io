@@ -3,7 +3,13 @@
 
 <head>
 
-<style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Search powered by me</title>
+
+    <style>
         html, body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -188,6 +194,7 @@
 </script>
 -->
 
+<!--
 <div1>
 <script>
   (function() {
@@ -202,6 +209,37 @@
 </script>
 <gcse:search></gcse:search>
 </div1>
+-->
+
+<script>
+  (function() {
+    var cx = 'partner-pub-4442584069323507:5216196777';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<div id="cseSearchResults" style="display: none;">
+    <div class="cseSearchHeader">
+        <div style="overflow-x: auto; white-space: nowrap;">
+            <div class="cseType cseTypeActive">Поиск</div>
+                        <div class="cseType"><a href="http://www.google.com.ng/search?hl=en&tbm=isch&q=">Картинки</a></div>
+                        <div class="cseType"><a href="http://www.google.com.ng/search?hl=en&tbm=nws&q=">Новости</a></div>
+                        <div class="cseType"><a href="http://www.google.com.ng/maps/search/">Карты</a></div>
+                    </div>
+    </div>
+    <gcse:searchresults-only linkTarget="_top" autoSearchOnLoad="true" enableHistory="true" adchannel="9518254811">
+        <div id="spinner">
+            <div class="loader-inner semi-circle-spin">
+                <div></div>
+            </div>
+        </div>
+    </gcse:searchresults-only>
+</div>
 
 </body>
 
